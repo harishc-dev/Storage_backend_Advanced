@@ -13,10 +13,7 @@ const UPLOADS_DIR = path.join(__dirname, "uploads");
 
 // CORS for Netlify and local dev
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://your-netlify-app.netlify.app" // replace with your Netlify domain
-  ],
+  origin: true,
   credentials: true
 }));
 app.use(express.json());
@@ -277,4 +274,5 @@ MongoClient.connect(mongoURI)
     console.log("✅ MongoDB connected");
     app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
   })
+
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
