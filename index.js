@@ -163,6 +163,7 @@ app.delete("/api/delete/:id", async (req, res) => {
 
 // ===== User Login =====
 const USERS = [
+  { username: "kp", password: "kp69" },
   { username: "hari", password: "hari69" },
   { username: "ashwin", password: "ash69" }
 ];
@@ -276,3 +277,4 @@ MongoClient.connect(mongoURI)
   })
 
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
+
